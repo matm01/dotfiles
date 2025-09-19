@@ -1,0 +1,82 @@
+{
+    "telemetry.telemetryLevel": "all",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'monospace', monospace",
+    "security.workspace.trust.banner": "always",
+    "http.proxyStrictSSL": false,
+    "http.proxySupport": "on",
+    "editor.tokenColorCustomizations": {
+        "[Default Dark+]": {
+            "textMateRules": [
+                {
+                    "name": "python function-call.generic",
+                    "scope": "meta.function-call.generic.python",
+                    "settings": {
+                        "foreground": "#c4c46e" // #DCDCAA                 
+                    }
+                },
+                {
+                    "name": "meta.attribute.python",
+                    "scope": "meta.attribute.python",
+                    "settings": {
+                        "foreground": "#c4c46e"
+                    }
+                },
+                {
+                    "name": "variable.parameter.function.language.special.self.python",
+                    "scope": "variable.parameter.function.language.special.self.python",
+                    "settings": {
+                        "foreground": "#569CD6"
+                    }
+                }
+            ]
+        }
+    },
+    "editor.semanticTokenColorCustomizations": {
+        "[Default Dark+]": {
+            "rules": {
+                "variable.declaration": "#D4D4D4",
+                "variable": "#D4D4D4",
+                "selfParameter": "#569CD6",
+                "selfParameter.declaration": "#569CD6",
+                "parameter.declaration": "#9CDCFE",
+                "parameter": "#bae4fb",
+                "module": "#971424",
+                "property": "#D4D4D4",
+                "function": "#c4c46e",
+                "method": "#c4c46e"
+            }
+        }
+    },
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        // "editor.defaultFormatter": "ms-python.autopep8",
+    },
+    "black-formatter.args": [
+        "--line-length=120",
+        "--skip-string-normalization",
+    ],
+    "editor.minimap.enabled": false,
+    "window.autoDetectHighContrast": false,
+    "editor.fontSize": 15,
+    "terminal.integrated.inheritEnv": false,
+    "files.autoSave": "onFocusChange",
+    "workbench.colorTheme": "Default Dark+",
+    "editor.fontVariations": false,
+    "editor.fontLigatures": true,
+    // set code format on save
+    "editor.formatOnSave": true,
+    "notebook.formatOnSave.enabled": true,
+    "notebook.formatOnCellExecution": true,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+    "notebook.lineNumbers": "on",
+    "workbench.iconTheme": "material-icon-theme",
+    "jupyter.askForKernelRestart": false,
+    "explorer.confirmPasteNative": false,
+    "explorer.confirmDelete": false,
+    "codeium.enableInComments": false,
+    "settingsSync.ignoredExtensions": []
+}
