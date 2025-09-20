@@ -100,5 +100,9 @@ export PATH=$PATH:/usr/bin/wine
 export PATH="$PATH:/home/matm/.modular/bin"
 
 . "$HOME/.atuin/bin/env"
+. "$HOME/.cargo/env"
 
 eval "$(atuin init zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
+[[ ! -f ~/dotfiles/p10k/.p10k.zsh ]] || source ~/dotfiles/p10k/.p10k.zsh
