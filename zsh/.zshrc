@@ -42,8 +42,10 @@ setopt autocd
 zstyle :compinstall filename '/home/matm/.zshrc'
 
 autoload -Uz compinit
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+#zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' menu no
+
 compinit
 _comp_options+=(globdots)
 
@@ -59,6 +61,7 @@ eval "$(fzf --zsh)"
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 source ~/.zsh/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
 zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
