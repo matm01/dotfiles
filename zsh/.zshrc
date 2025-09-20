@@ -51,7 +51,7 @@ _comp_options+=(globdots)
 source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # fuzzy finder shell integration
-source <(fzf --zsh)
+source "$(fzf --zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -59,10 +59,10 @@ source <(fzf --zsh)
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-source ~/.zsh/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# source ~/.zsh/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
 
 # vi mode
 #bindkey -v
@@ -80,30 +80,6 @@ bindkey '^[[B' history-substring-search-down
 
 #colored man pages
 export PAGER="most"
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/matm/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/matm/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/matm/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/matm/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-
-# env varibles
-export DV_BUCKET="sar-sentinel-1-tiff"
-export PROJECT_ID="dsr-vessel-project"
-#export YOLO_VERBOSE=False
-export SAR_BUCKET="sar-sentinel-1-tiff"
 
 # Created by `pipx` on 2024-05-22 16:36:30
 export PATH="$PATH:/home/matm/.local/bin"
