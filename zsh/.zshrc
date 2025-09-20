@@ -51,7 +51,7 @@ _comp_options+=(globdots)
 source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # fuzzy finder shell integration
-source "$(fzf --zsh)"
+eval "$(fzf --zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
