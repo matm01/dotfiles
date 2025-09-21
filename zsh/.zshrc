@@ -6,8 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
-#cat .ai.txt
-#neofetch
 alias ls='eza -al --color=always --group-directories-first'
 alias v='nvim'
 alias gearlever='flatpak run it.mijorus.gearlever'
@@ -17,7 +15,6 @@ alias ..='cd ..'
 alias gloga='git log --all --oneline --graph'
 alias c='xsel --input --clipboansrd'
 alias p='xsel --output --clipboard'
-#alias pt='yt --transcript '
 alias cn='() { > ~/Documents/braintree/braintree/$1.md}'
 alias extract_wisdom='() { yt --transcript $1 | fabric -sp extract_wisdom; } '
 pt() {
@@ -25,11 +22,9 @@ pt() {
     fabric -y "$video_link" --transcript
 }
 
-### nvim as MANPAGER
-#export MANPAGER="nvim -c 'set ft=man' -"
 
 ### bat as MANPAGER
-export MANPGER="sh -c 'col -bx |bat -l man -p'"
+export MANPGER="sh -c 'col -bx | bat -l man -p'"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -54,6 +49,19 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # fuzzy finder shell integration
 eval "$(fzf --zsh)"
+
+export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+export FZF_DEFAULT_OPTS="--height=50% --layout=default --border --color=hl:#2dd4bf"
+export FZF_TMUX_OPTS=" -p90%,70% "
+
+# setup fzf prewiew 
+export FZF_CTRL_T_OPTS="--preview 'if [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG')$ ]]; then catimg -r2 -w$COLUMNS {};else bat --color=always -n --line-range=:500 {};fi'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree -color=always {} | head -200'"
+
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -82,8 +90,6 @@ bindkey '^[[B' history-substring-search-down
 #bindkey -M menuselect 'up' vi-up-line-or-history
 #bindkey -M menuselect 'right' vi-forward-char
 
-#colored man pages
-export PAGER="most"
 
 # Created by `pipx` on 2024-05-22 16:36:30
 export PATH="$PATH:/home/matm/.local/bin"
