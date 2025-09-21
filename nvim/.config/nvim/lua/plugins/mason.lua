@@ -11,7 +11,7 @@ return {
       ensure_installed = {
         -- install language servers
         "lua-language-server",
-        "pyright",
+        "pyrefly",
 
         -- install formatters
         "stylua",
