@@ -17,6 +17,7 @@ alias c='xsel --input --clipboansrd'
 alias p='xsel --output --clipboard'
 alias cn='() { > ~/Documents/braintree/braintree/$1.md}'
 alias extract_wisdom='() { yt --transcript $1 | fabric -sp extract_wisdom; } '
+alias update='sudo dnf update -y && flatpak update -y && gearlever --update --all -y'
 pt() {
     local video_link="$1"
     fabric -y "$video_link" --transcript
@@ -112,3 +113,8 @@ eval "$(atuin init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
 [[ ! -f ~/dotfiles/p10k/.p10k.zsh ]] || source ~/dotfiles/p10k/.p10k.zsh
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/matm/.lmstudio/bin"
+# End of LM Studio CLI section
+
