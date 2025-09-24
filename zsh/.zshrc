@@ -23,9 +23,10 @@ pt() {
     fabric -y "$video_link" --transcript
 }
 
-
 ### bat as MANPAGER
-export MANPGER="sh -c 'col -bx | bat -l man -p'"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
+
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
