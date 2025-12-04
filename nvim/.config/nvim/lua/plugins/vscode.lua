@@ -1,5 +1,5 @@
 return {
-  "Mofiqul/vscode.nvim",
+  "matm01/vscode.nvim",
   name = "vscode",
   opts = function(_, opts)
     local c = require("vscode.colors").get_colors()
