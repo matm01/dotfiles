@@ -49,7 +49,7 @@
     },
     "[python]": {
         "diffEditor.ignoreTrimWhitespace": false,
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        //"editor.defaultFormatter": "ms-python.black-formatter",
         // "editor.defaultFormatter": "ms-python.autopep8",
     },
     "black-formatter.args": [
@@ -78,5 +78,6 @@
     "explorer.confirmPasteNative": false,
     "explorer.confirmDelete": false,
     "codeium.enableInComments": false,
-    "settingsSync.ignoredExtensions": []
+    "settingsSync.ignoredExtensions": [],
+    "python.languageServer": "Default"
 }
