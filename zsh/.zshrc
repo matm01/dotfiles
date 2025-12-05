@@ -52,6 +52,9 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 # fuzzy finder shell integration
 eval "$(fzf --zsh)"
 
+# zoxide integration
+eval "$(zoxide init zsh)"
+
 export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
