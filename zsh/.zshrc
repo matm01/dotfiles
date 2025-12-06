@@ -122,3 +122,6 @@ eval "$(atuin init zsh)"
 export PATH="$PATH:/home/matm/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# opencode
+export PATH=/home/matm/.opencode/bin:$PATH
