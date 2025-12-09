@@ -10,6 +10,7 @@ alias ls='eza -al --color=always --group-directories-first'
 alias v='nvim'
 alias gearlever='flatpak run it.mijorus.gearlever'
 alias vim='nvim'
+alias ...='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
 alias gloga='git log --all --oneline --graph'
@@ -18,6 +19,9 @@ alias p='xsel --output --clipboard'
 alias cn='() { > ~/Documents/braintree/braintree/$1.md}'
 alias extract_wisdom='() { yt --transcript $1 | fabric -sp extract_wisdom; } '
 alias upa='sudo dnf update -y && flatpak update -y && gearlever --update --all -y'
+alias gcm='git commit -m'
+alias pacs="source ~/.local/share/omarchy/bin/omarchy-pkg-install"
+alias yays="source ~/.local/share/omarchy/bin/omarchy-pkg-aur-install"
 pt() {
     local video_link="$1"
     fabric -y "$video_link" --transcript
@@ -125,3 +129,6 @@ export PATH="$PATH:/home/matm/.lmstudio/bin"
 
 # opencode
 export PATH=/home/matm/.opencode/bin:$PATH
+
+
+. "$HOME/.local/share/../bin/env"
