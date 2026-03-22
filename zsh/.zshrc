@@ -5,7 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 alias ls='eza -al --color=always --group-directories-first'
 alias v='nvim'
 alias gearlever='flatpak run it.mijorus.gearlever'
@@ -14,21 +13,31 @@ alias ...='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
 alias gloga='git log --all --oneline --graph'
-alias c='xsel --input --clipboansrd'
-alias p='xsel --output --clipboard'
+alias c='wl-copy'
+alias p='wl-paste'
+alias kssh='TERM="xterm-256color" kitty +kitten ssh'
 alias cn='() { > ~/Documents/braintree/braintree/$1.md}'
 alias extract_wisdom='() { yt --transcript $1 | fabric -sp extract_wisdom; } '
 alias upa='sudo dnf update -y && flatpak update -y && gearlever --update --all -y'
 alias gcm='git commit -m'
-alias pacs="source ~/.local/share/omarchy/bin/omarchy-pkg-install"
-alias yays="source ~/.local/share/omarchy/bin/omarchy-pkg-aur-install"
-pt() {
-    local video_link="$1"
-    fabric -y "$video_link" --transcript
+alias x='xdg-open'
+# alias y='yazi'
+# pt() {
+#     local video_link="$1"
+#     fabric -y "$video_link" --transcript
+# }
+# change current working directory to yazi directory
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
 }
 
 ### bat as MANPAGER
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export BAT_THEME="Monokai Extended"
 export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
 
 
@@ -85,21 +94,6 @@ zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# vi mode
-#bindkey -v
-#bindkey "^[[3~" delete-char
-
-# Use vim keys in tab complete menu:
-#bindkey -M menuselect 'h' vi-backward-char
-#bindkey -M menuselect 'j' vi-down-line-or-history
-#bindkey -M menuselect 'k' vi-up-line-or-history
-#bindkey -M menuselect 'l' vi-forward-char
-#bindkey -M menuselect 'left' vi-backward-char
-#bindkey -M menuselect 'down' vi-down-line-or-history
-#bindkey -M menuselect 'up' vi-up-line-or-history
-#bindkey -M menuselect 'right' vi-forward-char
-
-
 # Created by `pipx` on 2024-05-22 16:36:30
 export PATH="$PATH:/home/matm/.local/bin"
 
@@ -107,14 +101,14 @@ export CUDA_HOME=$CONDA_PREFIX
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/matm/Documents/coding/Assistants/Assistant/.venv/lib64/python3.12/site-packages/nvidia/cublas/lib:/home/matm/Documents/coding/Assistants/Assistant/.venv/lib64/python3.12/site-packages/nvidia/cudnn/lib
 
+# Golang environment
 export GOPATH=$HOME/go
-
 export PATH=$GOPATH/bin:$HOME/.local/bin:$PATH
 
 export PATH=$PATH:/usr/bin/wine
 export PATH="$PATH:/home/matm/.modular/bin"
-
-. "$HOME/.atuin/bin/env"
+export PATH=$HOME/scripts:$PATH
+# . "$HOME/.atuin/bin/env"
 . "$HOME/.cargo/env"
 
 eval "$(atuin init zsh)"
@@ -122,13 +116,18 @@ eval "$(atuin init zsh)"
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
 [[ ! -f ~/dotfiles/p10k/.p10k.zsh ]] || source ~/dotfiles/p10k/.p10k.zsh
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/matm/.lmstudio/bin"
-# End of LM Studio CLI section
+export EDITOR=nvim
 
-
-# opencode
+ #opencode
 export PATH=/home/matm/.opencode/bin:$PATH
 
 
-. "$HOME/.local/share/../bin/env"
+export PATH=/home/scripts:$PATH
+
+alias fabric='fabric-ai'
+source ~/.config/fabric/.zshconf
+
+#sc 
+# export __GL_SHADER_DISK_CACHE=true
+# export __GL_SHADER_DISK_CACHE_PATH=/home/games/star-citizen/nvidiacache
+# export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=true
