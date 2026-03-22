@@ -104,7 +104,6 @@ export PATH=$GOPATH/bin:$HOME/.local/bin:$PATH
 
 export PATH=$PATH:/usr/bin/wine
 export PATH="$PATH:/home/matm/.modular/bin"
-. "$HOME/.cargo/env"
 
 eval "$(atuin init zsh --disable-up-arrow)"
 function zvm_after_init() {
