@@ -13,9 +13,9 @@ return {
         "ruff",
         "prettier",
         "debugpy",
-        
       },
     },
   },
 }
 -- vim.lsp.enable({"pyrefly"})
+

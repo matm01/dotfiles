@@ -21,11 +21,8 @@ alias extract_wisdom='() { yt --transcript $1 | fabric -sp extract_wisdom; } '
 alias upa='sudo dnf update -y && flatpak update -y && gearlever --update --all -y'
 alias gcm='git commit -m'
 alias x='xdg-open'
-# alias y='yazi'
-# pt() {
-#     local video_link="$1"
-#     fabric -y "$video_link" --transcript
-# }
+# alias y="yazi"
+
 # change current working directory to yazi directory
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -89,12 +86,12 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 source ~/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
+# zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# Created by `pipx` on 2024-05-22 16:36:30
+
 export PATH="$PATH:/home/matm/.local/bin"
 
 export CUDA_HOME=$CONDA_PREFIX
@@ -107,21 +104,28 @@ export PATH=$GOPATH/bin:$HOME/.local/bin:$PATH
 
 export PATH=$PATH:/usr/bin/wine
 export PATH="$PATH:/home/matm/.modular/bin"
-export PATH=$HOME/scripts:$PATH
-# . "$HOME/.atuin/bin/env"
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
+function zvm_after_init() {
+  # fzf keybindings
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+  # atuin search
+  zvm_bindkey viins '^R' atuin-search
+  zvm_bindkey vicmd '^R' atuin-search
+}
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
 [[ ! -f ~/dotfiles/p10k/.p10k.zsh ]] || source ~/dotfiles/p10k/.p10k.zsh
 
 export EDITOR=nvim
+export TERMINAL=kitty
 
- #opencode
+# opencode
 export PATH=/home/matm/.opencode/bin:$PATH
 
-
+# export PATH=~/.local/bin:$PATH
 export PATH=/home/scripts:$PATH
 
 alias fabric='fabric-ai'
