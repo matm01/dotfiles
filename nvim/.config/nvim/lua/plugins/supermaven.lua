@@ -4,8 +4,10 @@ return {
   cmd = { "SupermavenUseFree", "SupermavenUsePro" },
   opts = {
     keymaps = {
-      accept_suggestion = "<A-f>",
-      clear_suggestion = "<A-c>",
+      -- accept_suggestion = "<A-f>",
+      accept_suggestion = "<Tab>",
+      clear_suggestion = "<S-Tab>",
+      accept_word = "<A-f>",
     },
   },
 }
