@@ -9,7 +9,7 @@ return {
     vim.g.llama_config = {
       endpoint_fim = "http://desktop:8012/infill",
       endpoint_inst = "http://desktop:8012/v1/chat/completions",
-      -- model_fim =              '',
+      -- model_fim = "fim-qwen-7b-default",
       -- model_inst =             '',
       -- api_key =                '',
       -- n_prefix =               256,

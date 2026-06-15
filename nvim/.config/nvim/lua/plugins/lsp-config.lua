@@ -9,13 +9,15 @@ return {
         "shfmt",
         "flake8",
         "lua-language-server",
-        "pyrefly",
+        -- "pyrefly",
+        "ty",
         "ruff",
         "prettier",
         "debugpy",
+        "llm-ls",
+        "texlab",
       },
     },
   },
 }
 -- vim.lsp.enable({"pyrefly"})
-
