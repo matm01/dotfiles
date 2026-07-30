@@ -91,7 +91,7 @@ source ~/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:/home/matm/.local/bin"
 
 export CUDA_HOME=$CONDA_PREFIX
