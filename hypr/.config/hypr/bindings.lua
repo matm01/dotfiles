@@ -63,14 +63,14 @@ hl.bind(
 
 -- Screenshots
 
-hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("hyprshot -m window"))
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output"))
-hl.bind("SUPER + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("hyprshot -m window"), { description = "screenshot window" })
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output"), { description = "screenshot output" })
+hl.bind("SUPER + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"), { description = "screenshot region" })
 
 -- Move focus with mainMod + arrow keys
 
-hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
-hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
-hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }))
-hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
-hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }), { description = "move focus left" })
+hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }), { description = "move focus right" })
+hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }), { description = "move focus up" })
+hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }), { description = "move focus down" })
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true }, { description = "drag window" })
