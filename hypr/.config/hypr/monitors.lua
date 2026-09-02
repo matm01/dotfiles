@@ -35,7 +35,7 @@ smw.setup({
 
 for i = 1, smw.get_amount_of_workspaces() do
 	local n = tostring(i)
-	hl.bind(mainMod .. " +" .. n, smw.workspace(n))
+	hl.bind(mainMod .. " +" .. n, smw.workspace(n), { description = "switch to workspace " .. n })
 	-- Move the active window to the Nth workspace on the currently focused monitor silently (no focus change).
 	hl.bind(
 		mainMod .. " + SHIFT +" .. n,
