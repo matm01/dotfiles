@@ -55,11 +55,11 @@ hl.bind(
 	{ description = "search file" }
 )
 
-hl.bind(
-	"SUPER + O",
-	hl.dsp.exec_cmd("~/.local/bin/handy.appimage --toggle-transcription"),
-	{ description = "toggle transcription" }
-)
+-- STT
+
+-- hl.bind("SUPER + O", hl.dsp.exec_cmd("~/.local/bin/handy.appimage --toggle-transcription"),	{ description = "toggle transcription" })
+hl.bind("SUPER + O", hl.dsp.exec_cmd("voxtype record start"), { description = "start voice recording" })
+hl.bind("SUPER + O", hl.dsp.exec_cmd("voxtype record stop"), { release = true })
 
 -- Screenshots
 
